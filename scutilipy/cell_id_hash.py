@@ -20,4 +20,4 @@ def cell_id_hash(barcode_column, run_column, length=16):
     # Generate hash for each row
     hashes = truncated_barcodes + run_strings
     
-    return hashes.apply(lambda x: hashlib.sha256(x.encode()).hexdigest()[:length])
+    return hashes.apply(lambda x: sha256(x.encode()).hexdigest()[:length])
