@@ -18,7 +18,7 @@ def write_10x_h5(adata, file):
     
     import numpy as np
     import pandas as pd
-    from h5py import h5py
+    import h5py
     
     if "feature_type" not in adata.var.columns:
         adata.var["feature_type"] = "Gene Expression"
@@ -61,7 +61,7 @@ def export_obsm_to_hdf5(adata, obsm_key, filename, chunk_max=1024):
     """
     import numpy as np
     import pandas as pd
-    from h5py import h5py
+    import h5py
     
     embedding = adata.obsm[obsm_key]  # shape: (n_cells, n_dims)
 
